@@ -351,7 +351,7 @@
 #define HAVE_GRP_H 1
 
 /* Define to 1 if you have the `history_truncate_file' function. */
-/* #undef HAVE_HISTORY_TRUNCATE_FILE */
+#define HAVE_HISTORY_TRUNCATE_FILE 1
 
 /* Define to 1 if you have the `hypot' function. */
 #define HAVE_HYPOT 1
@@ -440,7 +440,7 @@
 /* #undef HAVE_LIBNCURSES */
 
 /* Define to 1 if you have the `readline' library (-lreadline). */
-/* #undef HAVE_LIBREADLINE */
+#define HAVE_LIBREADLINE 1
 
 /* Define to 1 if you have the `rt' library (-lrt). */
 #define HAVE_LIBRT 1
@@ -488,10 +488,10 @@
 #define HAVE_LONG_LONG_INT 1
 
 /* Define if your system has lzma >= 5.0.3. */
-#define HAVE_LZMA 1
+/* #undef HAVE_LZMA */
 
 /* Define to 1 if you have the <lzma.h> header file. */
-#define HAVE_LZMA_H 1
+/* #undef HAVE_LZMA_H */
 
 /* Define to 1 if you have the `matherr' function. */
 #define HAVE_MATHERR 1
@@ -607,10 +607,10 @@
 #define HAVE_PWD_H 1
 
 /* Define to 1 if you have the <readline/history.h> header file. */
-/* #undef HAVE_READLINE_HISTORY_H */
+#define HAVE_READLINE_HISTORY_H 1
 
 /* Define to 1 if you have the <readline/readline.h> header file. */
-/* #undef HAVE_READLINE_READLINE_H */
+#define HAVE_READLINE_READLINE_H 1
 
 /* Define to 1 if you have the `readlink' function. */
 #define HAVE_READLINK 1
@@ -625,7 +625,7 @@
 #define HAVE_RINTL 1
 
 /* Define to 1 if you have the `rl_completion_matches' function. */
-/* #undef HAVE_RL_COMPLETION_MATCHES */
+#define HAVE_RL_COMPLETION_MATCHES 1
 
 /* Define to 1 if you have the `sched_getaffinity' function. */
 #define HAVE_SCHED_GETAFFINITY 1
@@ -785,7 +785,7 @@
 #define HAVE_TIMES 1
 
 /* Define to 1 if you have the `timespec_get' function. */
-#define HAVE_TIMESPEC_GET 1
+/* #undef HAVE_TIMESPEC_GET */
 
 /* Define to 1 if your 'struct tm' has tm_gmtoff. */
 #define HAVE_TM_GMTOFF 1
@@ -1063,7 +1063,7 @@
 #define TYPEOF_STRUCT_STAT_ST_ATIM_IS_STRUCT_TIMESPEC 1
 
 /* Define to use ICU for collation. */
-#define USE_ICU 1
+/* #undef USE_ICU */
 
 /* Define to use Apple's ICU. */
 /* #undef USE_ICU_APPLE */

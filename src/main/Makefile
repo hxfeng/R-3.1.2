@@ -72,9 +72,9 @@ ZLIB_CPPFLAGS =  -I$(top_srcdir)/src/extra/zlib
 BZLIB_CPPFLAGS =  -I$(top_srcdir)/src/extra/bzip2
 PCRE_CPPFLAGS =  -I$(top_srcdir)/src/extra/pcre
 TRE_CPPFLAGS =  -I$(top_srcdir)/src/extra
-XDR_CPPFLAGS = # -I$(top_srcdir)/src/extra/xdr
-XDR_CPPFLAGS = 
-XZ_CPPFLAGS = #  -I$(top_srcdir)/src/extra/xz/api
+XDR_CPPFLAGS =  -I$(top_srcdir)/src/extra/xdr
+#XDR_CPPFLAGS = 
+XZ_CPPFLAGS =   -I$(top_srcdir)/src/extra/xz/api
 
 ALL_CPPFLAGS = $(ZLIB_CPPFLAGS) $(BZLIB_CPPFLAGS) $(PCRE_CPPFLAGS) \
   $(TRE_CPPFLAGS) $(XDR_CPPFLAGS) $(XZ_CPPFLAGS) $(R_XTRA_CPPFLAGS) $(CPPFLAGS) $(DEFS)
@@ -87,8 +87,8 @@ R_ZLIBS =  ../extra/zlib/libz.a
 R_BZLIBS =  ../extra/bzip2/libbz2.a
 R_PCRE =  ../extra/pcre/libpcre.a
 R_TRE =  ../extra/tre/libtre.a
-R_XDR = # ../extra/xdr/libxdr.a
-R_XZ = #  ../extra/xz/liblzma.a
+R_XDR =  ../extra/xdr/libxdr.a
+R_XZ =   ../extra/xz/liblzma.a
 R_LIBINTL = # ../extra/intl/libintl.a
 R_TZONE = # ../extra/tzone/libtz.a
 
@@ -394,7 +394,16 @@ connections.o: connections.c ../../src/include/config.h \
  ../../src/include/R_ext/R-ftp-http.h ../../src/include/R_ext/RS.h \
  ../../src/include/Rconfig.h ../../src/include/R_ext/Riconv.h gzio.h \
  ../../src/extra/zlib/zlib.h ../../src/extra/zlib/zconf.h \
- ../../src/extra/bzip2/bzlib.h
+ ../../src/extra/bzip2/bzlib.h ../../src/extra/xz/api/lzma.h \
+ ../../src/extra/xz/api/lzma/version.h ../../src/extra/xz/api/lzma/base.h \
+ ../../src/extra/xz/api/lzma/vli.h ../../src/extra/xz/api/lzma/check.h \
+ ../../src/extra/xz/api/lzma/filter.h ../../src/extra/xz/api/lzma/bcj.h \
+ ../../src/extra/xz/api/lzma/delta.h ../../src/extra/xz/api/lzma/lzma.h \
+ ../../src/extra/xz/api/lzma/container.h \
+ ../../src/extra/xz/api/lzma/stream_flags.h \
+ ../../src/extra/xz/api/lzma/block.h ../../src/extra/xz/api/lzma/index.h \
+ ../../src/extra/xz/api/lzma/index_hash.h \
+ ../../src/extra/xz/api/lzma/hardware.h
 context.o: context.c ../../src/include/config.h ../../src/include/Defn.h \
  ../../src/include/R_ext/Complex.h ../../src/include/Rinternals.h \
  ../../src/include/R_ext/Arith.h ../../src/include/R_ext/libextern.h \
@@ -879,6 +888,7 @@ saveload.o: saveload.c ../../src/include/config.h \
  ../../src/include/R_ext/RStartup.h ../../src/include/Rmath.h \
  ../../src/include/Fileio.h ../../src/include/R_ext/RS.h \
  ../../src/include/Rconfig.h RBufferUtils.h \
+ ../../src/extra/xdr/rpc/types.h ../../src/extra/xdr/rpc/xdr.h \
  ../../src/include/Rconnections.h ../../src/include/R_ext/Connections.h
 scan.o: scan.c ../../src/include/config.h ../../src/include/Defn.h \
  ../../src/include/R_ext/Complex.h ../../src/include/Rinternals.h \
@@ -908,7 +918,8 @@ serialize.o: serialize.c ../../src/include/config.h \
  ../../src/include/Rinlinedfuns.h ../../src/include/Errormsg.h \
  ../../src/include/Rmath.h ../../src/include/Fileio.h \
  ../../src/include/Rversion.h ../../src/include/R_ext/RS.h \
- ../../src/include/Rconfig.h ../../src/include/Rconnections.h \
+ ../../src/include/Rconfig.h ../../src/extra/xdr/rpc/types.h \
+ ../../src/extra/xdr/rpc/xdr.h ../../src/include/Rconnections.h \
  ../../src/include/R_ext/Connections.h
 sort.o: sort.c ../../src/include/config.h ../../src/include/Defn.h \
  ../../src/include/R_ext/Complex.h ../../src/include/Rinternals.h \
@@ -1017,7 +1028,16 @@ util.o: util.c ../../src/include/config.h ../../src/include/Defn.h \
  ../../src/include/Errormsg.h ../../src/include/Internal.h \
  ../../src/include/Print.h ../../src/include/Defn.h \
  ../../src/include/R_ext/PrtUtil.h ../../src/include/R_ext/Riconv.h \
- valid_utf8.h ../../src/include/R_ext/Applic.h \
+ valid_utf8.h ../../src/extra/xz/api/lzma.h \
+ ../../src/extra/xz/api/lzma/version.h ../../src/extra/xz/api/lzma/base.h \
+ ../../src/extra/xz/api/lzma/vli.h ../../src/extra/xz/api/lzma/check.h \
+ ../../src/extra/xz/api/lzma/filter.h ../../src/extra/xz/api/lzma/bcj.h \
+ ../../src/extra/xz/api/lzma/delta.h ../../src/extra/xz/api/lzma/lzma.h \
+ ../../src/extra/xz/api/lzma/container.h \
+ ../../src/extra/xz/api/lzma/stream_flags.h \
+ ../../src/extra/xz/api/lzma/block.h ../../src/extra/xz/api/lzma/index.h \
+ ../../src/extra/xz/api/lzma/index_hash.h \
+ ../../src/extra/xz/api/lzma/hardware.h ../../src/include/R_ext/Applic.h \
  ../../src/include/R_ext/RS.h ../../src/include/Rconfig.h \
  ../../src/include/R_ext/BLAS.h ../../src/include/Rmath.h
 version.o: version.c ../../src/include/config.h ../../src/include/Defn.h \

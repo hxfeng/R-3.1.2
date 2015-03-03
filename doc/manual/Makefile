@@ -32,8 +32,8 @@ OBJECTS_PDF = $(SOURCES_TEXI:.texi=.pdf)
 OBJECTS_EPUB = $(SOURCES_TEXI:.texi=.epub)
 OBJECTS_MOBI = $(SOURCES_TEXI:.texi=.mobi)
 
-MAKEINDEX = /usr/local/texlive/2014/bin/x86_64-linux/makeindex
-MAKEINFO = /usr/bin/makeinfo
+MAKEINDEX = /usr/local/texlive/2013/bin/x86_64-linux//makeindex
+MAKEINFO = 
 MAKEINFO_HTML_OPTS = --html --no-split --css-include=$(srcdir)/Rman.css
 MAKEINFO_TEXT_OPTS = --number-sections --fill-column=76 --no-split --no-headers
 TEXI2HTML = $(MAKEINFO) $(MAKEINFO_HTML_OPTS)
@@ -42,8 +42,8 @@ TEXI2TEXT = $(MAKEINFO) $(MAKEINFO_TEXT_OPTS)
 TEXI2DVI0 = 
 TEXI2DVI = LC_COLLATE=C  --texinfo="@set UseExternalXrefs "
 TEXI2PDF = $(TEXI2DVI) --pdf
-PDFLATEX = /usr/local/texlive/2014/bin/x86_64-linux/pdflatex
-PDFTEX = /usr/local/texlive/2014/bin/x86_64-linux/pdftex
+PDFLATEX = /usr/local/texlive/2013/bin/x86_64-linux//pdflatex
+PDFTEX = /usr/local/texlive/2013/bin/x86_64-linux//pdftex
 
 BATCHPDFLATEX = $(PDFLATEX) -interaction=nonstopmode
 
@@ -57,7 +57,7 @@ EBOOK_OPTS = --language en --publisher "R Core Team"
 
 datarootdir = ${prefix}/share
 infodir = ${datarootdir}/info
-INSTALL_INFO = /usr/sbin/install-info
+INSTALL_INFO = 
 
 R_PAPERSIZE = a4
 R_RD4PDF = times,inconsolata,hyper

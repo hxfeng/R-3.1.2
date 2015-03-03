@@ -20,11 +20,11 @@ RBLAS = make.blas
 LIBBZ2 = make.bzip2
 LIBPCRE = make.pcre
 LIBZ = make.zlib
-LIBXDR =# make.xdr
+LIBXDR = make.xdr
 LIBINTL =# make.intl
 LIBTRE = make.tre
 LIBTZONE = #make.tzone
-LIBXZ =# make.xz
+LIBXZ = make.xz
 EXTRAS = $(RBLAS) $(LIBBZ2) $(LIBPCRE) $(LIBZ) $(LIBXDR) $(LIBINTL) \
   $(LIBTRE) $(LIBTZONE) $(LIBXZ)
 

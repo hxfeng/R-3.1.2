@@ -97,7 +97,7 @@ Rdfiles:
 	  $(ECHO) "tools:::.convertRdfiles(\"$(srcdir)/$${pkg}\", \"$(top_builddir)/library/$${pkg}\", silent = TRUE)" | LC_ALL=C $(R_EXE) || exit 1; \
 	done
 
-PDFLATEX = /usr/local/texlive/2014/bin/x86_64-linux/pdflatex
+PDFLATEX = /usr/local/texlive/2013/bin/x86_64-linux//pdflatex
  vignettes: vignettes-lattice
 # vignettes: vignettes-no-lattice
 

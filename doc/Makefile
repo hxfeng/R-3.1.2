@@ -54,7 +54,7 @@ NEWS: NEWS.rds
 html/NEWS.html: NEWS.rds
 	@$(ECHO) 'options(warn=1);tools:::Rd2HTML_NEWS_in_Rd("NEWS.rds", "html/NEWS.html")' |  $(R_EXE)
 
-PDFLATEX = /usr/local/texlive/2014/bin/x86_64-linux/pdflatex
+PDFLATEX = /usr/local/texlive/2013/bin/x86_64-linux//pdflatex
 ## needs pdflatex (and more)
 ## Need LC_COLLATE to work around the misuse of [A-z] in texi2dvi 1.135
 ## (as reported by MM)

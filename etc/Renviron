@@ -32,10 +32,10 @@ R_PDFVIEWER=${R_PDFVIEWER-'/usr/bin/xdg-open'}
 LN_S='ln -s'
 MAKE=${MAKE-'make'}
 ## Prefer a POSIX-compliant sed on e.g. Solaris
-SED=${SED-'/usr/bin/sed'}
+SED=${SED-'/bin/sed'}
 ## Prefer a tar that can automagically read compressed archives
 ## Used in R CMD INSTALL for binary packages
-TAR=${TAR-'/usr/bin/gtar'}
+TAR=${TAR-'/bin/gtar'}
 
 ## System and compiler types.
 R_SYSTEM_ABI='linux,gcc,gxx,gfortran,?'

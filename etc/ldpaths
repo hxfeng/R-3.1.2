@@ -1,7 +1,7 @@
-: ${JAVA_HOME=/usr/local/java}
-: ${R_JAVA_LD_LIBRARY_PATH=${JAVA_HOME}/jre/lib/amd64/server}
-if test -n "/usr/local/lib64"; then
-: ${R_LD_LIBRARY_PATH=${R_HOME}/lib:/usr/local/lib64}
+: ${JAVA_HOME=/home/fenghaixiong/programes/java}
+: ${R_JAVA_LD_LIBRARY_PATH=/home/fenghaixiong/programes/jdk1.7.0_65/jre/lib/amd64/server}
+if test -n "/usr/local/lib64:/usr/lib/gcc/x86_64-redhat-linux/4.4.4"; then
+: ${R_LD_LIBRARY_PATH=${R_HOME}/lib:/usr/local/lib64:/usr/lib/gcc/x86_64-redhat-linux/4.4.4}
 else
 : ${R_LD_LIBRARY_PATH=${R_HOME}/lib}
 fi

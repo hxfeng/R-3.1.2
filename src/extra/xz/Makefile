@@ -45,13 +45,13 @@ liblzma_a_OBJECTS = $(OBJECTS)
 SUBDIRS_WITH_NO_BUILD = \
   api check common delta lz lzma rangecoder simple
 
-all: # R
+all:  R
 
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
-R: Makefile # stamp
-	# @$(MAKE) $(noinst_LIBRARIES)
+R: Makefile  stamp
+	 @$(MAKE) $(noinst_LIBRARIES)
 
 stamp:
 	@ln -s $(srcdir)/*/*.c $(srcdir)/*/*.h .

@@ -11,10 +11,10 @@ R_HOME = $(top_builddir)
 
 include $(top_builddir)/Makeconf
 
-ALL_CPPFLAGS = $(R_XTRA_CPPFLAGS) $(X_CFLAGS) -pthread -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libdrm -I/usr/include/libpng16  \
+ALL_CPPFLAGS = $(R_XTRA_CPPFLAGS) $(X_CFLAGS) -pthread -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   \
   -I$(top_srcdir)/src/library/grDevices/src/cairo $(CPPFLAGS) $(DEFS)
 ALL_CFLAGS = $(ALL_CFLAGS_LO)
-ALL_X_LIBS = $(X_PRE_LIBS) -lpangocairo-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lpng16 -lz -lcairo -lX11 -lXext  $(X_LIBS) $(X_EXTRA_LIBS)
+ALL_X_LIBS = $(X_PRE_LIBS) -pthread -lpangocairo-1.0 -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0 -lpng12 -lz -lcairo -lX11   $(X_LIBS) $(X_EXTRA_LIBS)
 
 SOURCES = devX11.c rotated.c rbitmap.c 
 DEPENDS = $(SOURCES:.c=.d)
@@ -109,67 +109,49 @@ devX11.o: devX11.c ../../../src/include/config.h \
  /usr/include/glib-2.0/glib.h /usr/include/glib-2.0/glib/galloca.h \
  /usr/include/glib-2.0/glib/gtypes.h \
  /usr/lib64/glib-2.0/include/glibconfig.h \
- /usr/include/glib-2.0/glib/gmacros.h \
- /usr/include/glib-2.0/glib/gversionmacros.h \
- /usr/include/glib-2.0/glib/garray.h \
+ /usr/include/glib-2.0/glib/gmacros.h /usr/include/glib-2.0/glib/garray.h \
  /usr/include/glib-2.0/glib/gasyncqueue.h \
- /usr/include/glib-2.0/glib/gthread.h \
- /usr/include/glib-2.0/glib/gatomic.h /usr/include/glib-2.0/glib/gerror.h \
- /usr/include/glib-2.0/glib/gquark.h \
+ /usr/include/glib-2.0/glib/gthread.h /usr/include/glib-2.0/glib/gerror.h \
+ /usr/include/glib-2.0/glib/gquark.h /usr/include/glib-2.0/glib/gutils.h \
+ /usr/include/glib-2.0/glib/gatomic.h \
  /usr/include/glib-2.0/glib/gbacktrace.h \
  /usr/include/glib-2.0/glib/gbase64.h \
  /usr/include/glib-2.0/glib/gbitlock.h \
  /usr/include/glib-2.0/glib/gbookmarkfile.h \
- /usr/include/glib-2.0/glib/gbytes.h \
- /usr/include/glib-2.0/glib/gcharset.h \
+ /usr/include/glib-2.0/glib/gcache.h /usr/include/glib-2.0/glib/glist.h \
+ /usr/include/glib-2.0/glib/gmem.h /usr/include/glib-2.0/glib/gslice.h \
  /usr/include/glib-2.0/glib/gchecksum.h \
+ /usr/include/glib-2.0/glib/gcompletion.h \
  /usr/include/glib-2.0/glib/gconvert.h \
  /usr/include/glib-2.0/glib/gdataset.h /usr/include/glib-2.0/glib/gdate.h \
  /usr/include/glib-2.0/glib/gdatetime.h \
  /usr/include/glib-2.0/glib/gtimezone.h /usr/include/glib-2.0/glib/gdir.h \
- /usr/include/glib-2.0/glib/genviron.h \
  /usr/include/glib-2.0/glib/gfileutils.h \
- /usr/include/glib-2.0/glib/ggettext.h /usr/include/glib-2.0/glib/ghash.h \
- /usr/include/glib-2.0/glib/glist.h /usr/include/glib-2.0/glib/gmem.h \
- /usr/include/glib-2.0/glib/gnode.h /usr/include/glib-2.0/glib/ghmac.h \
- /usr/include/glib-2.0/glib/gchecksum.h \
- /usr/include/glib-2.0/glib/ghook.h \
+ /usr/include/glib-2.0/glib/ghash.h /usr/include/glib-2.0/glib/ghook.h \
  /usr/include/glib-2.0/glib/ghostutils.h \
  /usr/include/glib-2.0/glib/giochannel.h \
  /usr/include/glib-2.0/glib/gmain.h /usr/include/glib-2.0/glib/gpoll.h \
  /usr/include/glib-2.0/glib/gslist.h /usr/include/glib-2.0/glib/gstring.h \
  /usr/include/glib-2.0/glib/gunicode.h \
- /usr/include/glib-2.0/glib/gutils.h \
  /usr/include/glib-2.0/glib/gkeyfile.h \
  /usr/include/glib-2.0/glib/gmappedfile.h \
  /usr/include/glib-2.0/glib/gmarkup.h \
  /usr/include/glib-2.0/glib/gmessages.h \
- /usr/include/glib-2.0/glib/goption.h \
+ /usr/include/glib-2.0/glib/gnode.h /usr/include/glib-2.0/glib/goption.h \
  /usr/include/glib-2.0/glib/gpattern.h \
  /usr/include/glib-2.0/glib/gprimes.h /usr/include/glib-2.0/glib/gqsort.h \
  /usr/include/glib-2.0/glib/gqueue.h /usr/include/glib-2.0/glib/grand.h \
- /usr/include/glib-2.0/glib/gregex.h \
+ /usr/include/glib-2.0/glib/grel.h /usr/include/glib-2.0/glib/gregex.h \
  /usr/include/glib-2.0/glib/gscanner.h \
  /usr/include/glib-2.0/glib/gsequence.h \
- /usr/include/glib-2.0/glib/gshell.h /usr/include/glib-2.0/glib/gslice.h \
- /usr/include/glib-2.0/glib/gspawn.h \
+ /usr/include/glib-2.0/glib/gshell.h /usr/include/glib-2.0/glib/gspawn.h \
  /usr/include/glib-2.0/glib/gstrfuncs.h \
- /usr/include/glib-2.0/glib/gstringchunk.h \
  /usr/include/glib-2.0/glib/gtestutils.h \
  /usr/include/glib-2.0/glib/gthreadpool.h \
- /usr/include/glib-2.0/glib/gtimer.h \
- /usr/include/glib-2.0/glib/gtrashstack.h \
- /usr/include/glib-2.0/glib/gtree.h \
+ /usr/include/glib-2.0/glib/gtimer.h /usr/include/glib-2.0/glib/gtree.h \
  /usr/include/glib-2.0/glib/gurifuncs.h \
  /usr/include/glib-2.0/glib/gvarianttype.h \
  /usr/include/glib-2.0/glib/gvariant.h \
- /usr/include/glib-2.0/glib/gversion.h \
- /usr/include/glib-2.0/glib/deprecated/gallocator.h \
- /usr/include/glib-2.0/glib/deprecated/gcache.h \
- /usr/include/glib-2.0/glib/deprecated/gcompletion.h \
- /usr/include/glib-2.0/glib/deprecated/gmain.h \
- /usr/include/glib-2.0/glib/deprecated/grel.h \
- /usr/include/glib-2.0/glib/deprecated/gthread.h \
  /usr/include/pango-1.0/pango/pango-types.h \
  /usr/include/glib-2.0/glib-object.h \
  /usr/include/glib-2.0/gobject/gbinding.h \
@@ -181,7 +163,6 @@ devX11.o: devX11.c ../../../src/include/config.h \
  /usr/include/glib-2.0/gobject/gsignal.h \
  /usr/include/glib-2.0/gobject/gmarshal.h \
  /usr/include/glib-2.0/gobject/gboxed.h \
- /usr/include/glib-2.0/gobject/glib-types.h \
  /usr/include/glib-2.0/gobject/genums.h \
  /usr/include/glib-2.0/gobject/gparamspecs.h \
  /usr/include/glib-2.0/gobject/gsourceclosure.h \
@@ -218,5 +199,5 @@ devX11.o: devX11.c ../../../src/include/config.h \
  ../../../src/include/R_ext/Rdynload.h
 rotated.o: rotated.c ../../../src/include/config.h rotated.h
 rbitmap.o: rbitmap.c ../../../src/include/config.h bitmap.h \
- /usr/include/libpng16/png.h /usr/include/libpng16/pnglibconf.h \
- /usr/include/libpng16/pngconf.h ../../../src/include/R_ext/Error.h
+ /usr/include/libpng12/png.h /usr/include/libpng12/pngconf.h \
+ ../../../src/include/R_ext/Error.h

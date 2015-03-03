@@ -12,7 +12,7 @@ include $(top_builddir)/Makeconf
 # see note in src/main/Makefile.in
 LIBINTL=  
 R_HOME=$(rhome)
-STATIC_LIBR_PC = # $(BLAS_LIBS) $(FLIBS)  $(LIBINTL)  $(LIBS)
+STATIC_LIBR_PC = # $(BLAS_LIBS) $(FLIBS)  $(LIBINTL) -lreadline  $(LIBS)
 
 ALL_CPPFLAGS = $(R_XTRA_CPPFLAGS) $(X_CFLAGS) $(CPPFLAGS) $(DEFS)
 
@@ -153,7 +153,7 @@ sys-std.o: sys-std.c ../../src/include/config.h ../../src/include/Defn.h \
  ../../src/include/Errormsg.h ../../src/include/Internal.h \
  ../../src/include/Fileio.h Runix.h ../../src/include/R_ext/RStartup.h \
  ../../src/include/Startup.h ../../src/include/R_ext/Riconv.h \
- ../../src/include/R_ext/eventloop.h
+ ../../src/include/R_ext/eventloop.h ../../src/include/R_ext/Parse.h
 X11.o: X11.c ../../src/include/config.h ../../src/include/Defn.h \
  ../../src/include/R_ext/Complex.h ../../src/include/Rinternals.h \
  ../../src/include/R_ext/Arith.h ../../src/include/R_ext/libextern.h \

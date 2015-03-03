@@ -1,0 +1,8 @@
+./configure，报错：“configure: error: –with-readline=yes (default) and headers/libs are not available”，
+执行命令./configure –with-readline=no，继续报错：“configure: error: –with-x=yes (default) and X11 headers/libs are not available”。
+尝试执行命令./configure –with-readline=no  –with-x=no通过
+
+安装成功。进入R命令行界面，可以操作。但是tab自动补全以及上下左右等方向键都无法使用。想着应该是./configure –with-readline=no –with-x=no惹的祸。因此重新安装了一下，这次在执行./configure命令前先执行了命令：
+yum install readline-devel（解决错误“ –with-readline=yes (default) and headers/libs are not available”）
+yum install libXt-devel（解决错误“–with-x=yes (default) and X11 headers/libs are not available”）
+最终安装成功，并且tab自动补全等都有效。

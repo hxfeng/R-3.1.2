@@ -117,7 +117,7 @@ Report bugs at bugs.r-project.org "
 
 ## some systems have a more portable sed, e.g. /usr/xpg4/bin/sed on Solaris,
 ## so make sure that is used.
-SED=/usr/bin/sed
+SED=/bin/sed
 export SED
 
 error () {

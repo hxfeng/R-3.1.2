@@ -4,7 +4,7 @@
 #
 # R was configured using the following call
 # (not including env. vars and site configuration)
-# configure  '--prefix=/usr/local/R-3.1.2/' '--with-readline=no' 'JAVA_HOME=/usr/local/java'
+# configure  '--prefix=/usr/local/R-3.1.2' 'JAVA_HOME=/home/fenghaixiong/programes/java'
 
 ## This fails if it contains spaces, or if it is quoted
 include $(R_SHARE_DIR)/make/vars.mk
@@ -42,21 +42,21 @@ FCLIBS =
 F77 = gfortran
 F77_VISIBILITY = -fvisibility=hidden
 FFLAGS = -g -O2 $(LTO)
-FLIBS =  -lgfortran -lm -lquadmath
+FLIBS =  -L/usr/lib/gcc/x86_64-redhat-linux/4.4.4 -lgfortran -lm
 FCPICFLAGS = -fpic
 FPICFLAGS = -fpic
 FOUNDATION_CPPFLAGS = 
 FOUNDATION_LIBS = 
-JAR = /usr/local/java/bin/jar
-JAVA = /usr/local/java/jre/bin/java
-JAVAC = /usr/local/java/bin/javac
-JAVAH = /usr/local/java/bin/javah
+JAR = /home/fenghaixiong/programes/java/bin/jar
+JAVA = /home/fenghaixiong/programes/java/jre/bin/java
+JAVAC = /home/fenghaixiong/programes/java/bin/javac
+JAVAH = /home/fenghaixiong/programes/java/bin/javah
 ## JAVA_HOME might be used in the next three.  
 ## They are for packages 'JavaGD' and 'rJava'
-JAVA_HOME = /usr/local/java
+JAVA_HOME = /home/fenghaixiong/programes/java
 JAVA_CPPFLAGS = -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
-JAVA_LIBS = -L$(JAVA_HOME)/jre/lib/amd64/server -ljvm
-JAVA_LD_LIBRARY_PATH = $(JAVA_HOME)/jre/lib/amd64/server
+JAVA_LIBS = -L/home/fenghaixiong/programes/jdk1.7.0_65/jre/lib/amd64/server -ljvm
+JAVA_LD_LIBRARY_PATH = /home/fenghaixiong/programes/jdk1.7.0_65/jre/lib/amd64/server
 LAPACK_LIBS = -L$(R_HOME)/lib$(R_ARCH) -lRlapack
 ## we only need this is if it is external, as otherwise link to R
 LIBINTL= 
@@ -64,7 +64,7 @@ LIBM = -lm
 LIBR0 = 
 LIBR1 = 
 LIBR =  
-LIBS =  -llzma -lrt -ldl -lm -licuuc -licui18n
+LIBS =  -lrt -ldl -lm
 ## needed by R CMD config
 LIBnn = lib64
 LIBTOOL = $(SHELL) "$(R_HOME)/bin/libtool"
@@ -82,7 +82,7 @@ OBJCXX =
 R_ARCH = 
 RANLIB = ranlib
 SAFE_FFLAGS = -g -O2 -ffloat-store
-SED = /usr/bin/sed
+SED = /bin/sed
 SHELL = /bin/sh
 SHLIB_CFLAGS = 
 SHLIB_CXXFLAGS = 
@@ -110,7 +110,7 @@ TCLTK_CPPFLAGS =
 TCLTK_LIBS = 
 
 ## for linking to libR.a
-STATIC_LIBR = # -Wl,--whole-archive "$(R_HOME)/lib$(R_ARCH)/libR.a" -Wl,--no-whole-archive $(BLAS_LIBS) $(FLIBS)  $(LIBINTL)  $(LIBS)
+STATIC_LIBR = # -Wl,--whole-archive "$(R_HOME)/lib$(R_ARCH)/libR.a" -Wl,--no-whole-archive $(BLAS_LIBS) $(FLIBS)  $(LIBINTL) -lreadline  $(LIBS)
 
 R_XTRA_CFLAGS = 
 R_XTRA_CPPFLAGS =  -I$(R_INCLUDE_DIR) -DNDEBUG

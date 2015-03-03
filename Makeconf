@@ -1,8 +1,8 @@
 PACKAGE = R
 VERSION = 3.1.2
 
-abs_top_srcdir = /home/hxfeng/Downloads/R-3.1.2
-abs_top_builddir = /home/hxfeng/Downloads/R-3.1.2
+abs_top_srcdir = /home/fenghaixiong/git-home/R-3.1.2
+abs_top_builddir = /home/fenghaixiong/git-home/R-3.1.2
 
 include $(top_srcdir)/share/make/vars.mk
 
@@ -29,11 +29,11 @@ ECHO_C =
 ECHO_N = -n
 ECHO_T = 
 FFLAGS = -g -O2 
-FLIBS =  -lgfortran -lm -lquadmath
-FLIBS_IN_SO =  -lgfortran -lm -lquadmath
+FLIBS =  -L/usr/lib/gcc/x86_64-redhat-linux/4.4.4 -lgfortran -lm
+FLIBS_IN_SO =  -L/usr/lib/gcc/x86_64-redhat-linux/4.4.4 -lgfortran -lm
 FPICFLAGS = -fpic
 F77 = gfortran
-GETWD = /usr/bin/pwd
+GETWD = /bin/pwd
 GZIP = --best
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
@@ -46,7 +46,7 @@ LIBM = -lm
 LIBR0 = 
 LIBR1 = 
 LIBR =  
-LIBS =  -llzma -lrt -ldl -lm -licuuc -licui18n
+LIBS =  -lrt -ldl -lm
 LIBnn = lib64
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 ## AFAICS unused
@@ -74,8 +74,8 @@ R_XTRA_CPPFLAGS =  -I. -I$(top_builddir)/src/include -I$(top_srcdir)/src/include
 R_XTRA_FFLAGS = 
 R_XTRA_LIBS = 
 RANLIB = ranlib
-READLINE_LIBS = 
-SED = /usr/bin/sed
+READLINE_LIBS = -lreadline 
+SED = /bin/sed
 SHELL = /bin/sh
 SHLIB_EXT = .so
 SHLIB_CFLAGS = 
@@ -86,7 +86,7 @@ SHLIB_LINK = $(SHLIB_LD) $(SHLIB_LDFLAGS) $(LIBR0) $(LDFLAGS)
 SHLIB_LTO = $(CFLAGS) $(CPICFLAGS)
 STRIP_LIBS = strip --strip-unneeded
 STRIP_STATIC_LIBS = strip --strip-debug
-TAR = /usr/bin/gtar
+TAR = /bin/gtar
 USE_NLS = yes
 X_CFLAGS = 
 X_LIBS =  -lX11 -lXt
